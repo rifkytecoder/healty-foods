@@ -1,0 +1,12 @@
+[
+  {
+    "email": "mamad@email.com",
+    "username": "mamad",
+    "password": "mamad123",
+    "first_name": "mamad",
+    "last_name": "mag",
+    "birth_date": "2002-02-20",
+    "gender": "Male",
+    "address1": "Ciamis"
+  }
+]

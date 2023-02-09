@@ -1,0 +1,41 @@
+[
+  {
+    "plan_type": "Premium",
+    "subscriptionPeriod": 1,
+    "prices": 3990000,
+    "details": {
+      "description": "Hanya 25K per meal",
+      "mealType": "Satu meal/hari setiap hari",
+      "orderType": "Order 24/7",
+      "features": "Bebas memilih menu baru",
+      "deliveryYype": "Bebas ongkir"     
+    },
+    "url": "/subscriptionplans/add/?subscriptionplan=Premium"
+  },
+  {
+    "plan_type": "Pro",
+    "subscriptionPeriod": 1,
+    "prices": 1490000,
+    "details": {
+      "description": "Hanya 25K per meal",
+      "mealType": "Satu meal/10 hari satu bulan",
+      "orderType": "Order 24/7",
+      "features": "Bebas memilih menu baru",
+      "deliveryYype": "Bebas ongkir"     
+    },
+    "url": "/subscriptionplans/add/?subscriptionplan=Pro"
+  },
+  {
+    "plan_type": "Starter",
+    "subscriptionPeriod": 1,
+    "prices": 190000,
+    "details": {
+      "description": "hanya 1 meal per hari",
+      "mealType": "Satu meal/hari",
+      "orderType": "Order dari 8 AM - 12 PM",
+      "features": "-",
+      "deliveryYype": "Bebas ongkir"     
+    },
+    "url": "/subscriptionplans/add/?subscriptionplan=Starter"
+  }
+]

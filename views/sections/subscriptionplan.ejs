@@ -1,0 +1,33 @@
+<section class="section-plans js--section-plans" id="plans">
+  <div class="row">
+    <h2>Mari mulai makan makanan sehat sekarang</h2>
+  </div>
+  <div class="row">
+
+    <% subscriptionplans.forEach(subPlan => { %>
+      <div class="<%='col span-1-of-' + subscriptionplans.length%>">
+        <div class="plan-box js--wp-4">
+          <div>
+            <h3><%= subPlan.plan_type %></h3>
+            <p class="plan-price"><%= subPlan.displayRupiah() %><span>/Tahun</span></p>
+            <p class="plan-price-meal"><%= subPlan.getDescription() %></p>
+          </div>
+          <div>
+            <ul>
+              <li><i class="ion-ios-checkmark-empty icon-small"></i><%= subPlan.getMealType() %></li>
+              <li><i class="ion-ios-checkmark-empty icon-small"></i><%= subPlan.getOrderType() %></li>
+              <li><i class="ion-ios-checkmark-empty icon-small"></i><%= subPlan.getFeatures() %></li>
+              <li><i class="ion-ios-checkmark-empty icon-small"></i><%= subPlan.getDeliveryType() %></li>
+            </ul>
+          </div>
+          <div>
+            <p>BARCODE HERE...</p>
+          </div>
+          <div>
+            <a href="<%= subPlan.url %>" class="btn btn-full">Daftar Sekarang</a>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</section>

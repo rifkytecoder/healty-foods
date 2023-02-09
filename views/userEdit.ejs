@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/queries.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+    
+    <title>Healthy Food Here...</title>
+  </head>
+<body>
+  <nav>
+    <div class="row">
+      <img src="/img/logo-white.png" alt="Omnifood logo" class="logo">
+      <img src="/img/logo.png" alt="Omnifood logo" class="logo-black">
+      <ul class="main-nav js--main-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/users/dashboard/">Dashboard</a></li>
+        <li><a href="/users/logout">Logout</a></li>
+      </ul>
+      <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+    </div>
+  </nav>
+  <div class="row">
+    <h2>Edit Profile</h2>
+  </div>
+  <div class="row">
+    <% if (errors) { %>
+      <% errors.forEach(err => { %>
+        <div class="isa_error">
+          <ion-icon name="alert-outline"></ion-icon>
+          <%= err %>
+        </div>
+      <% }) %>
+    <% } %>
+  </div>
+  <section class="section-form js--section-features" id="profile-form">
+    <form action="/users/edit/<%= data.id%>" method="POST">
+      <div class="row">
+        <div class="col span-1-of-3">
+          <label for="email">Email</label>
+        </div>
+        <div class="col span-2-of-3">
+          <input type="email" id="email" name="email" placeholder="ex. anyone@anything.com" value="<%= data.email%>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col span-1-of-3">
+          <label for="username">Username</label>
+        </div>
+        <div class="col span-2-of-3">
+          <input type="text" id="username" name="username" placeholder="ex. anyone" value="<%= data.username%>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col span-1-of-3">
+          <label for="password">password</label>
+        </div>
+        <div class="col span-2-of-3">
+          <input type="password" id="password" name="password" placeholder="ex. secret" value="<%= data.password%>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col span-1-of-3">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="col span-2-of-3">
+          <input type="text" id="first_name" name="first_name" placeholder="ex. first name" value="<%= data.first_name%>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col span-1-of-3">
+          <label for="last_name">Last Name</label>
+        </div>
+        <div class="col span-2-of-3">
+          <input type="text" id="last_name" name="last_name" placeholder="ex. last name" value="<%= data.last_name%>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col span-1-of-3">
+          <label for="birth_date">Birth Date</label>
+        </div>
+        <div class="col span-2-of-3">
+          <input type="date" id="birth_date" name="birth_date" placeholder="ex. 2020-12-30" value="<%= data.getBirthDate()%>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col span-1-of-3">
+          <label for="gender">gender</label>
+        </div>
+        <div class="col span-2-of-3">
+          <input type="radio" id="male" name="gender" value="male" <%= (data.gender === 'male') ? 'checked' : '' %> >
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female" <%= (data.gender === 'female') ? 'checked' : '' %> >
+          <label for="female">Female</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col span-1-of-3">
+          <label for="address1">Address</label>
+        </div>
+        <div class="col span-2-of-3">
+          <textarea id="address1" name="address1" rows="10" cols="50"><%= data.address1%></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col span-1-of-3">
+        </div>
+        <div class="col span-2-of-3">
+          <input type="submit" value="Update">
+        </div>
+      </div>
+    </form>
+
+  </section>
+</body>
+</html>
+<%- include('footer') %>
