@@ -16,13 +16,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
-      SubscriptionPlanId: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'SubscriptionPlans',
-          key: 'id',
-        },
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
