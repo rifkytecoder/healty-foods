@@ -130,21 +130,21 @@ class SubscriptionPlanController {
       })
   }
 
-  static destroy(req, resp) {
-    // id get from req.params[0]
-    return SubscriptionPlan
-      .destroy(
-        {
-          where: { id }
-        }
-      )
-      .then(subscriptionPlan => {
-        resp.send(subscriptionPlan);
-      })
-      .catch(err => {
-        resp.send(err);
-      });
-  }
+  // static destroy(req, resp) {
+  //   // id get from req.params[0]
+  //   return SubscriptionPlan
+  //     .destroy(
+  //       {
+  //         where: { id }
+  //       }
+  //     )
+  //     .then(subscriptionPlan => {
+  //       resp.send(subscriptionPlan);
+  //     })
+  //     .catch(err => {
+  //       resp.send(err);
+  //     });
+  // }
 }
 
 module.exports = SubscriptionPlanController;
